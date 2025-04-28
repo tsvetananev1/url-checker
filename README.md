@@ -99,17 +99,7 @@ NAME             STATUS   ROLES           AGE   VERSION
 docker-desktop   Ready    control-plane   1m    v1.xx.x
 ```
 
-### Difference between `helm create` and `helm install`
-
-- `helm create`  
-  ➔ This command **generates** the basic directory structure and default template files for a new Helm chart.  
-  It is used when you want to **start building a new chart** from scratch.
-
-- `helm install`  
-  ➔ This command **deploys** a Helm chart into a Kubernetes cluster.  
-  It uses the chart you created (or downloaded) to **actually launch** the application.
-
-**In short:**  
+### Difference between `helm create` and `helm install` 
 - `create` ➔ for **generating** a Helm chart structure  
 - `install` ➔ for **deploying** a Helm chart into Kubernetes
 
@@ -154,22 +144,6 @@ Expose the service on your local machine on port 8000.
 http://localhost:8000/metrics
 
 You should see the Prometheus metrics for the monitored URLs.
-
-### Important Update After Changing Values
-
-If you modify the `values.yaml`, you need to upgrade the Helm release (for the task the port has been changed from 80 to 8000):
-```bash
-helm upgrade url-checker ./url-checker-chart
-```
-Alternatively, you can uninstall and reinstall the release:
-```bash
-helm uninstall url-checker
-helm install url-checker ./url-checker-chart
-```
-Verify the new service port with:
-```bash
-kubectl get svc
-```
 
 ## Metrics Example
 sample_external_url_up{url="https://httpstat.us/503"} 0.0
