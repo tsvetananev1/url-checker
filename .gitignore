@@ -1,0 +1,26 @@
+# Ignore Python bytecode files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Ignore virtual environments
+venv/
+env/
+.venv/
+.env/
+
+# Ignore configuration and log files
+*.log
+*.pot
+*.pyc
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore IDE/editor folders
+.vscode/
+.idea/
+
+# Ignore cached dependency folders
+pip-wheel-metadata/
